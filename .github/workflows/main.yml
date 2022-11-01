@@ -1,0 +1,17 @@
+name: Deploy
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: akhileshns/heroku-deploy@v3.12.12 # This is the action
+        with:
+          heroku_api_key: 177f6947-9928-427e-bd65-738a0378a2f1
+          heroku_app_name: lab1-ds2 #Must be unique in Heroku
+          heroku_email: "jhan.perez@correounivalle.edu.co"
